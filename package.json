@@ -1,7 +1,7 @@
 {
-    "name" : "hipache",
-    "version" : "0.1.18",
-    "description" : "Complete high-scaled reverse-proxy solution",
+    "name" : "concussionjs-proxy",
+    "version" : "0.0.1",
+    "description" : "Complete high-scaled reverse-proxy with rate limiting behavior -- built on dotcloud's hipache distributed proxy",
     "keywords": [
         "reverse",
         "proxy",
@@ -28,7 +28,7 @@
         "jshint": "jshint --config jshint.json -- bin/hipache lib/*.js test/*.js"
     },
     "engines" : {
-        "node" : "0.8.x"
+        "node" : ">=0.6.x"
     },
     "engineStrict": true,
     "author" : {
