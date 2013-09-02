@@ -1,46 +1,64 @@
 {
-    "name" : "concussionjs-proxy",
-    "version" : "0.0.1",
-    "description" : "Complete high-scaled reverse-proxy with rate limiting behavior -- built on dotcloud's hipache distributed proxy",
-    "keywords": [
-        "reverse",
-        "proxy",
-        "http",
-        "http-proxy"
-    ],
-    "main" : "./bin/hipache",
-    "bin": {
-        "hipache": "./bin/hipache"
-    },
-    "directories" : {
-        "lib" : "./lib"
-    },
-    "dependencies" : {
-        "http-proxy" : "git://github.com/jpetazzo/node-http-proxy#patch-1",
-        "redis" : "0.7.x",
-        "lru-cache": "2.0.x",
-        "optimist": "0.3.x",
-        "redback":"0.3.x"
-    },
-    "scripts" : {
-        "start" : "node bin/hipache",
-        "test" : "nodeunit test/test_*.js",
-        "jshint": "jshint --config jshint.json -- bin/hipache lib/*.js test/*.js"
-    },
-    "engines" : {
-        "node" : ">=0.6.x"
-    },
-    "engineStrict": true,
-    "author" : {
-        "name" : "Samuel Alba",
-        "email" : "sam.alba@gmail.com",
-        "url" : "http://www.dotcloud.com/"
-    },
-    "maintainer" : [
-        "Sam Alba <sam.alba@gmail.com>"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "http://github.com/dotcloud/hipache.git"
+  "name": "concussionjs-proxy",
+  "version": "0.0.1",
+  "description": "Complete high-scaled reverse-proxy with rate limiting behavior -- built on dotcloud's hipache distributed proxy",
+  "keywords": [
+    "reverse",
+    "proxy",
+    "http",
+    "http-proxy"
+  ],
+  "main": "./bin/cjs-proxy",
+  "bin": {
+    "cjs-proxy": "./bin/cjs-proxy"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "dependencies": {
+    "http-proxy": "git://github.com/jpetazzo/node-http-proxy#patch-1",
+    "redis": "0.7.x",
+    "lru-cache": "2.0.x",
+    "optimist": "0.3.x",
+    "redback": "0.3.x"
+  },
+  "scripts": {
+    "start": "node bin/hipache",
+    "test": "nodeunit test/test_*.js",
+    "jshint": "jshint --config jshint.json -- bin/hipache lib/*.js test/*.js"
+  },
+  "engines": {
+    "node": ">=0.6.x"
+  },
+  "engineStrict": true,
+  "author": {
+    "name": "Samuel Alba",
+    "email": "sam.alba@gmail.com",
+    "url": "http://www.dotcloud.com/"
+  },
+  "maintainer": [
+    "Sam Alba <sam.alba@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dotcloud/hipache.git"
+  },
+  "_npmUser": {
+    "name": "ben@concussionjs.com",
+    "email": "ben@concussionjs.com"
+  },
+  "_id": "concussionjs-proxy@0.0.1",
+  "contributors": [
+    {
+      "name": "Samuel Alba",
+      "email": "sam.alba@gmail.com"
     }
+  ],
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "_engineSupported": true,
+  "_npmVersion": "1.1.4",
+  "_nodeVersion": "v0.6.12",
+  "_defaultsLoaded": true,
+  "_from": "concussionjs-proxy@0.0.x"
 }
