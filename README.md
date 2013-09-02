@@ -1,20 +1,19 @@
-Hipache: a distributed HTTP and websocket proxy
+ConcussionJS Proxy Services Layer: a distributed HTTP and websocket proxy with rate limiting built on hipache
 ===============================================
 
 What is it?
 -----------
 
-Hipache is a distributed proxy designed to route high volumes of http and
-websocket traffic to unusually large numbers of virtual hosts, in a highly
-dynamic topology where backends are added and removed several times per second.
-It is particularly well-suited for PaaS (platform-as-a-service) and other
-environments that are both business-critical and multi-tenant.
+A distributed proxy built to support massive scale with rate limiting capabilities built to tier levels of service and provide extra layers of security.
 
-Hipache was originally developed at [dotCloud](http://www.dotcloud.com), a
-popular platform-as-a-service, to replace its first-generation routing layer
-based on a heavily instrumented nginx deployment. It currently serves
-production traffic for tens of thousands of applications hosted on dotCloud.
-Hipache is based on the node-http-proxy library.
+ConcussionJS Proxy Services Layer is designed to be deployed along with ConcussionJS Core Platform, though it can be deployed independently as well per the instructions below.
+
+Th ConcussionJS proxy is built on Hipache, originally developed at [dotCloud](http://www.dotcloud.com), a
+popular platform-as-a-service, to replace its first-generation routing layer based on a heavily instrumented nginx deployment. It currently serves production traffic for tens of thousands of applications hosted on dotCloud.
+
+Hipache was in turn built on the node-http-proxy library.
+
+
 
 
 Run it!
@@ -24,21 +23,21 @@ Run it!
 
 From the shell:
 
-    $ npm install hipache -g
+    $ npm install cjs-proxy -g
 
-*The '-g' option will make the 'hipache' bin-script available system-wide (usually linked from '/usr/local/bin')*
+*The '-g' option will make the 'cjs-proxy' bin-script available system-wide (usually linked from '/usr/local/bin')*
 
 
 ### 2. Configuring the server (config.json)
 
-dotCloud proxy2 uses a Redis server to manage its configuration (and to share
+cjs-proxy uses a Redis server to manage its configuration (and to share
 its state across the multiple workers). You can use the Redis server to change
 its configuration while it's running or simply check the health state of a
 backend.
 
     {
         "server": {
-            "accessLog": "/var/log/hipache_access.log",
+            "accessLog": "/var/log/cjs_proxy_access.log",
             "port": 80,
             "workers": 5,
             "maxSockets": 100,
@@ -70,17 +69,19 @@ each backend (per worker)
 
 ### 3. Spawn the server
 
-From the shell:
 
-    $ hipache
+
+By specifying your configuration file:
+
+    $ cjs-proxy --config config.json
+
+Or from the shell:
+
+    $ cjs-proxy
 
 Or if you use the port 80:
 
-    $ sudo hipache
-
-Or by specifying your configuration file:
-
-    $ hipache --config config.json
+    $ sudo cjs-proxy
 
 __Managing multiple configuration files:__
 
