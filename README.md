@@ -1,4 +1,4 @@
-ConcussionJS Proxy Services Layer: a distributed HTTP and websocket proxy with rate limiting built on hipache
+ConcussionJS Proxy Services Layer
 ===============================================
 
 What is it?
@@ -92,7 +92,7 @@ from an environment variable called `SETTINGS_FLAVOR`.
 For instance, here is how to spawn the server with the `config_test.json`
 configuration file in order to run the tests.
 
-    $ SETTINGS_FLAVOR=test hipache
+    $ SETTINGS_FLAVOR=test cjs-proxy
     
 
 ### 4. Configuring a vhost (redis)
